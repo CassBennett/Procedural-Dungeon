@@ -1,0 +1,99 @@
+////////////////////////////////////////////////////////////////////////////////
+// Light Vertex Shader
+// Developed for previous module with help from Paul Robertson: Graphics Programming with Shaders
+// Recieves data from the Light Vertex Shader for the objects to be rendered
+// Uses this information to apply per pixel lighting to the scene and objects rendered using this shader based on the lights position/colour/range
+// This is used to render the main parts of the dungeon
+////////////////////////////////////////////////////////////////////////////////
+
+Texture2D Texture : register(t0);
+SamplerState SampleType : register(s0);
+
+cbuffer LightBuffer : register(cb0)
+{
+	float4 diffuseColor;
+	float4 ambientColor;
+    float3 lightDirection;
+	float padding;
+	float4 position;
+	float constantFactor;
+	float linearFactor;
+	float quadraticFactor;
+	float distance;
+	float specularPower;
+	float3 padding2;
+	float4 specularColor;
+};
+
+struct PixelInputType
+{
+    float4 position : SV_POSITION;
+    float2 tex : TEXCOORD0;
+    float3 normal : NORMAL;
+	float3 viewDirection : TEXCOORD1;
+	float3 position3D : TEXCOORD2;
+};
+
+float4 LightPixelShader(PixelInputType input) : SV_TARGET
+{
+	// Initialise Variables
+    float4 textureColor = float4(0.0f, 0.0f, 0.0f, 0.0f);
+	float4 finalColor = float4(0.0f, 0.0f, 0.0f, 0.0f);
+	float4 color = float4(0.0f, 0.0f, 0.0f, 0.0f);
+	float3 light_position;
+	float3 lightDir = float3(0.0f, 0.0f, 0.0f);
+    float lightIntensity = 0.0f;
+	float dist = 0.0f;
+	float attenuation = 0.0f;
+
+	// Sample the original texture of the object at this position
+	textureColor = Texture.Sample(SampleType, input.tex);
+	textureColor.w = 1.0;
+
+	// Get the lighting information
+	light_position.xyz = position.xyz;
+		
+	// Calculate light direction based on position in 3D space and light position
+	lightDir = input.position3D - light_position;
+		
+	// Get the distance of the light vector
+	dist = length(lightDir);
+
+	// If the pixel is within the range of the light, calculate the light intensity
+	if (dist < distance)
+	{
+		lightDir = normalize(lightDir);
+
+		// Calculate the light intensity using the light vector and the object's normal
+		lightIntensity = saturate(dot(input.normal, -lightDir));
+
+		// If light intensity is more than zero apply diffuse and attenuation
+		if (lightIntensity > 0)
+		{
+			color += (diffuseColor * lightIntensity);
+    
+			color = saturate(color);
+				
+			// Calculate attenuation
+			attenuation = 1.0 / (constantFactor + linearFactor * dist + quadraticFactor * pow(dist, 2));
+
+			color = color * attenuation;
+		}
+		if (lightIntensity < 0)
+		{
+			// Do nothing
+		}
+	}
+	else
+	{
+		// Multiply the texture pixel and the final diffuse color to get the final pixel color result.
+		color = color * textureColor;
+	}
+
+	// Apply the lights colour to the objects texture
+	finalColor = saturate(ambientColor + color) * textureColor;
+
+	return finalColor;
+}
+
+
