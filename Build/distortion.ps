@@ -1,0 +1,63 @@
+// Filename: distortion.ps
+// Help/guide on this shader from https://digitalerr0r.wordpress.com/2009/04/22/xna-shader-programming-tutorial-12-post-process-noise/
+// This shader uses the original texture co-ordinates and distorts them using a timer and a sin wave to multiply the value by a positive or negative value so that the 
+// co-ordinates are distorted by a small range from the original co-ordinates so that the scene still renders recognisably but there is a constant distortion/noise filter 
+// animating texture co-ordinates around. 
+
+Texture2D ScreenTexture : register(t0);
+SamplerState TextureSampler : register(s0);
+
+// This is the input from the vertex shader
+struct PixelInputType
+{
+    float4 position : SV_POSITION;
+    float2 tex : TEXCOORD0;
+	float3 normal : NORMAL;
+};
+
+// This buffer is set up in the Distortion Shader class and is passed these values in run time so that the shader 
+// changes the co-ordinates distortion based on the amount the user sets it to and the current time
+cbuffer DistortionBuffer : register(cb0)
+{
+	float timer;
+	float distortion_amount;
+	float seed;
+	float padding;
+}
+
+// Carry out the pixel shader rendering
+float4 DistortionPixelShader(PixelInputType input) : SV_TARGET
+{
+    float4 textureColor;
+	// Get the values from the constant buffer
+	float Timer = timer;
+	float Distortion_Amount = distortion_amount;
+	float Distortion_Seed = seed;
+
+	// Get the distortion texture co-ordinates by multiplying the distortion seed by the current timer
+	// then multiplying this value by the sin of the input co-ordinates + the timer + 1 so that it will return a random positive or negative value each time
+	// This is so that the distortion value is different every time meaning that co-ordinates are animating the distortion instead of 
+	// one static distortion of the texture at the start of the program
+
+	float DistortionFactor = Distortion_Seed * Timer * sin(input.tex.x * input.tex.y + Timer + 1);
+	
+	// fmod returns the floating point remainder, use this to get a smaller value for the distortion factor so that co-ordinates
+	// are not distorted by too much
+	DistortionFactor = fmod(DistortionFactor, 8) * fmod(DistortionFactor, 4);
+
+	// Use the distortion value to find how much distortion the x and y co-ordinates will have
+	float DistortionX = fmod(DistortionFactor, Distortion_Amount + 0.001);
+	float DistortionY = fmod(DistortionFactor, Distortion_Amount);
+
+	// These are the distortion values to add to the original texture co-ordinates to get the distorted co-ordinate
+	float2 DistortCoords = float2(DistortionX, DistortionY);
+	
+    // Sample the pixel color from the texture using the sampler at this texture coordinate location.
+	// The texture co-ordinate you sample for the distortion is the original texture co-ordinates + the distortion amounts for both
+	// x and y so that the texture sampled is actually a little bit different from the original, animating it as distortion every frame
+	textureColor = ScreenTexture.Sample(TextureSampler, input.tex + DistortCoords);
+
+	// Return the colour from the distorted texture co-ordinate
+    return textureColor;
+}
+
