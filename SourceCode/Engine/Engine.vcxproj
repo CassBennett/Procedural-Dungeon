@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CC8EB8E1-1A10-4345-88B7-C839B29AF7FB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Engine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)\Include;$(DXSDK_DIR)\Include\Engine\DungeonSourceFiles;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(VC_SourcePath);</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Engine\FoundationSourceFiles;$(ProjectDir)..\Engine\DungeonSourceFiles;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="DungeonSourceFiles\applicationclass.cpp" />
+    <ClCompile Include="DungeonSourceFiles\cameraclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\cpuclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\d3dclass.cpp" />
+    <ClCompile Include="DungeonSourceFiles\distortionshaderclass.cpp" />
+    <ClCompile Include="DungeonSourceFiles\dungeonclass.cpp" />
+    <ClCompile Include="DungeonSourceFiles\dungeonpiececlass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\fontclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\fontshaderclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\fpsclass.cpp" />
+    <ClCompile Include="DungeonSourceFiles\inputclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\lightclass.cpp" />
+    <ClCompile Include="DungeonSourceFiles\lightshaderclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\main.cpp" />
+    <ClCompile Include="DungeonSourceFiles\meshclass.cpp" />
+    <ClCompile Include="DungeonSourceFiles\positionclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\rendertextureclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\systemclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\targetwindowclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\textclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\textureclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\textureshaderclass.cpp" />
+    <ClCompile Include="FoundationSourceFiles\timerclass.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DungeonSourceFiles\applicationclass.h" />
+    <ClInclude Include="DungeonSourceFiles\cameraclass.h" />
+    <ClInclude Include="FoundationSourceFiles\cpuclass.h" />
+    <ClInclude Include="FoundationSourceFiles\d3dclass.h" />
+    <ClInclude Include="DungeonSourceFiles\distortionshaderclass.h" />
+    <ClInclude Include="DungeonSourceFiles\dungeonclass.h" />
+    <ClInclude Include="DungeonSourceFiles\dungeonpiececlass.h" />
+    <ClInclude Include="FoundationSourceFiles\fontclass.h" />
+    <ClInclude Include="FoundationSourceFiles\fontshaderclass.h" />
+    <ClInclude Include="FoundationSourceFiles\fpsclass.h" />
+    <ClInclude Include="DungeonSourceFiles\inputclass.h" />
+    <ClInclude Include="FoundationSourceFiles\lightclass.h" />
+    <ClInclude Include="DungeonSourceFiles\lightshaderclass.h" />
+    <ClInclude Include="DungeonSourceFiles\meshclass.h" />
+    <ClInclude Include="DungeonSourceFiles\positionclass.h" />
+    <ClInclude Include="FoundationSourceFiles\rendertextureclass.h" />
+    <ClInclude Include="FoundationSourceFiles\systemclass.h" />
+    <ClInclude Include="FoundationSourceFiles\targetwindowclass.h" />
+    <ClInclude Include="FoundationSourceFiles\textclass.h" />
+    <ClInclude Include="FoundationSourceFiles\textureclass.h" />
+    <ClInclude Include="FoundationSourceFiles\textureshaderclass.h" />
+    <ClInclude Include="FoundationSourceFiles\timerclass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="color.ps" />
+    <None Include="color.vs" />
+    <None Include="distortion.ps" />
+    <None Include="distortion.vs" />
+    <None Include="font.ps" />
+    <None Include="font.vs" />
+    <None Include="light.ps" />
+    <None Include="light.vs" />
+    <None Include="texture.ps" />
+    <None Include="texture.vs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

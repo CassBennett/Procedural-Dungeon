@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Shader Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Template Headers">
+      <UniqueIdentifier>{f91b4df6-6338-43ae-be67-998f6f32b8b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Template Source Files">
+      <UniqueIdentifier>{2b751147-2abf-444b-a183-a75ebf220f76}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DungeonSourceFiles\applicationclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonSourceFiles\cameraclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonSourceFiles\distortionshaderclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonSourceFiles\dungeonclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonSourceFiles\dungeonpiececlass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonSourceFiles\inputclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonSourceFiles\lightshaderclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonSourceFiles\meshclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonSourceFiles\positionclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\cpuclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\d3dclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\fontclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\fontshaderclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\fpsclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\lightclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\rendertextureclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\systemclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\targetwindowclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\textclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\textureclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\textureshaderclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationSourceFiles\timerclass.cpp">
+      <Filter>Source Files\Template Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DungeonSourceFiles\applicationclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonSourceFiles\cameraclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonSourceFiles\distortionshaderclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonSourceFiles\dungeonclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonSourceFiles\dungeonpiececlass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonSourceFiles\inputclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonSourceFiles\lightshaderclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonSourceFiles\meshclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonSourceFiles\positionclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\cpuclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\d3dclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\fontclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\fontshaderclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\fpsclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\lightclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\rendertextureclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\systemclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\targetwindowclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\textclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\textureclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\textureshaderclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationSourceFiles\timerclass.h">
+      <Filter>Header Files\Template Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="distortion.vs">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="color.ps">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="color.vs">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="distortion.ps">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="light.vs">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="light.ps">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="font.ps">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="font.vs">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="texture.ps">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="texture.vs">
+      <Filter>Shader Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
