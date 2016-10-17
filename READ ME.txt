@@ -9,8 +9,8 @@ Project Page: https://cassbennett.com/portfolio/procedural-dungeon/
 Project Description:
 This project is an application I developed for the Procedural Generation module at Abertay University in the Computer Games Technology Course.
 The application recursively generates a 3D dungeon each time it is ran, with rooms at random sizes and adjustable dungeon depth. 
-Project files I specifically worked on are found in '.../Procedural_App/SourceCode/Engine/DungeonSourceFiles' 
-Files used from previous projects or given as foundation from a lecturer and adapted to the project are found in '.../ProceduralApp/SourceCode/Engine/FoundationSourceFiles' 
+Project files I specifically worked on are found in '.../SourceCode/Engine/DungeonSourceFiles' 
+Files used from previous projects or given as foundation from a lecturer and adapted to the project are found in '.../SourceCode/Engine/FoundationSourceFiles' 
 
 ---------------------------------------------------------------------------
 
@@ -30,15 +30,15 @@ Installation:
 
 - Select the 'Clone or Download' button on the applications GitHub page - https://github.com/CassBennett/Procedural-Dungeon
 - Download the Project Zip
-- Extract All and open the ProceduralApp folder 
+- Extract All and open the folder 
 
 To run the program:
-	- In the 'ProceduralApp' folder, open the 'Build' folder
+	- Open the 'Build' folder
 	- Double Click the 'Run Dungeon.exe' executable file. 
 	* This will procedurally generate a dungeon with a depth of 5 (General size) * 
 
 To access the source or Visual Studio Solution:
-	- In the 'ProceduralApp' folder, open the 'SourceCode' folder
+	- Open the 'SourceCode' folder
 	
 	* Source files * 
 	- All source files of the project can be found in the 'Engine' folder within the 'SourceCode' folder. 
